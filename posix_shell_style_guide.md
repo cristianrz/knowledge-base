@@ -48,7 +48,7 @@ variables that are not defined and dealing with errors manually is no fun.
 
 ## Main
 
-Avoid the use of:
+Generally, avoid the use of:
 
 ```bash
 main(){
@@ -58,7 +58,8 @@ main(){
 main "$@"
 ```
 
-it complicates the code for no reason.
+it complicates the code for no reason. Exceptions are when you might want to do
+unit testing to load the functions without loading `main`.
 
 ## Function length
 
