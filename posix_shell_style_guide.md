@@ -116,6 +116,7 @@ _my_function(){
 	printf '%s\n' "$HELLO"
 }
 
+date
 _my_function
 ```
 
