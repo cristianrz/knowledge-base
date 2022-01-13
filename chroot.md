@@ -1,3 +1,6 @@
+
+
+
 ## Accessing graphical applications inside the chroot
 
 You can run graphical applications within a chroot, but you need to provide an

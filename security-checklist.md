@@ -1,5 +1,9 @@
 ## Checklist
 
+## Backups
+
+* [ ] Store at least 1 copy of the backups offline
+
 ### Router
 
 * [ ] Change router username and password
@@ -18,10 +22,22 @@
 * [ ] Dedicated account for sudo (admin)
 * [ ] Disable su
 * [ ] Enable either SELinux or AppArmor
-* [ ] Mount data file systems with nodev, nosuid and noexec (home, tmp, dev/shm, var/tmp)
+* [ ] Mount data file systems with nodev, nosuid and noexec
+	* `/boot`
+	* `/dev/shm`
+	* `/home`
+	* `/tmp`
+	* `/var/tmp`
+	* `/var`
 * [ ] Separate users
 * [ ] Use specific account for virtualbox
 * [ ] Use wayland instead of xorg or run xorg rootless
+* [ ] Set umask to 0077
+* [ ] Allow only members of the wheel user group to assume root's identity. Uncomment in `/etc/pam.d/su` and `/etc/pam.d/su-l`:
+
+```
+auth required pam_wheel.so use_uid
+```
 
 ### Kernel
 

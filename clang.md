@@ -136,3 +136,17 @@ main(void)
 	return (0);
 }
 ```
+
+## Bools in C99
+```c
+_Bool flag;
+```
+
+or 
+
+```c
+#include <stdbool.h>
+
+bool flag;
+flag = true;
+```

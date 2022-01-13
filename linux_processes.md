@@ -1,4 +1,4 @@
-# Linux processes
+# Linux 
 
 ## Fork/exec
 
@@ -26,3 +26,9 @@
 * `kill -2` sigint
 * `kill -1` sighup
 * `kill -9` sigkill, brute force kill
+
+## Check open ports
+
+```terminal
+# ss -lpntu
+```
