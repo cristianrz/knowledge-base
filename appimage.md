@@ -39,7 +39,7 @@ linuxdeploy-x86_64.AppImage \
 
 ## Desktop file
 
-```desktop
+```txt
 [Desktop Entry]
 Name=MyApp
 Exec=myapp

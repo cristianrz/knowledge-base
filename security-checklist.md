@@ -1,4 +1,5 @@
-## Checklist
+# Security Checklist
+In general, `lynis` is better than this.
 
 ## Backups
 

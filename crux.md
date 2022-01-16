@@ -1,6 +1,8 @@
+# Crux Linux
+
 ## Install without kernel
 
-```sh
+```terminal
 $ fdisk /dev/sd?
 $ mkfs.???? /dev/sd??
 $ mkswap /dev/sd??

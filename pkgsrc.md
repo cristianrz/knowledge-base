@@ -1,4 +1,6 @@
-# Install
+# pkgsrc
+
+## Install
 
 Get the repositories:
 

@@ -1,5 +1,4 @@
-
-
+# Chroot
 
 ## Accessing graphical applications inside the chroot
 
