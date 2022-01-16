@@ -1,4 +1,4 @@
-# ALTERNATIVES TO BLOATWARE
+# Alternatives to bloatware
 
 The list is built pointing to software that has alternatives with less dependencies, and addressing dependencies was the easy thing. Some tools in particular were included because they add less dependencies overall while keeping a system functional. One such example is imagemagick and ffmpeg, by which you can do a lot of work and replace many tools by just using those with scripts and replace something like a screenshot utility. Certainly it would be great to have a comparative on resource usage. However, a new revision now includes software that was previously discarded for better comparison and featured recommendations will not be highlight for the moment.
 
