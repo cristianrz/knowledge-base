@@ -1,40 +1,42 @@
 # Security Checklist
+
 In general, `lynis` is better than this.
 
 ## Backups
 
-* [ ] Store at least 1 copy of the backups offline
+* Store at least 1 copy of the backups offline
 
 ### Router
 
-* [ ] Change router username and password
-* [ ] Change the router site to https in random port
-* [ ] Disable NATPMP and UPNP
-* [ ] Enable router MAC filtering
-* [ ] Only allow router admin access via cable
-* [ ] Port-scan router from outside
-* [ ] Set number of DHCP leases to number of usual devices on router
-* [ ] Use a dedicated LAN
-* [ ] Use a long router password
+* Change router username and password
+- Change the router site to https in random port
+- Disable NAT PMP and UPNP
+* EnablerouterMACfiltering
+* Only allow router admin access via cable
+* Port-scanrouterfromoutside
+* SetnumberofDHCPleasestonumberofusualdevicesonrouter
+* UseadedicatedLAN
+* Usealongrouterpassword
 
 ### Permissions
 
-* [ ] chmod 700 home dirs
-* [ ] Dedicated account for sudo (admin)
-* [ ] Disable su
-* [ ] Enable either SELinux or AppArmor
-* [ ] Mount data file systems with nodev, nosuid and noexec
+* chmod700homedirs
+* Dedicatedaccountforsudo(admin)
+* Disablesu
+* EnableeitherSELinuxorAppArmor
+* Mountdatafilesystemswithnodev,nosuidandnoexec
 	* `/boot`
 	* `/dev/shm`
 	* `/home`
 	* `/tmp`
 	* `/var/tmp`
 	* `/var`
-* [ ] Separate users
-* [ ] Use specific account for virtualbox
-* [ ] Use wayland instead of xorg or run xorg rootless
-* [ ] Set umask to 0077
-* [ ] Allow only members of the wheel user group to assume root's identity. Uncomment in `/etc/pam.d/su` and `/etc/pam.d/su-l`:
+* Separateusers
+* Usespecificaccountforvirtualbox
+* Usewaylandinsteadofxorgorrunxorgrootless
+* Setumaskto0077
+* Allowonlymembersof the wheel user group to assume root's identity.
+* Uncomment in `/etc/pam.d/su` and `/etc/pam.d/su-l`:
 
 ```
 auth required pam_wheel.so use_uid
@@ -42,15 +44,15 @@ auth required pam_wheel.so use_uid
 
 ### Kernel
 
-* [ ] Disable unprivileged user namespaces
+* Disable unprivileged user namespaces
 
 ## Others
 
-* [ ] Disable bluetooth
-* [ ] Disable hyperthreading
-* [ ] Disable javascript
-* [ ] Disable previews in file manager
-* [ ] Don't dual boot, one system can infect the boot partition
+*  Disable bluetooth
+*  Disable hyperthreading
+*  Disable javascript
+*  Disable previews in file manager
+*  Don't dual boot, one system can infect the boot partition
 
 ## Processes
 

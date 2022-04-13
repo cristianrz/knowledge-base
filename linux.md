@@ -31,4 +31,11 @@
 
 ```terminal
 # ss -lpntu
+# ss -plunt
+```
+
+or 
+
+```
+# lsof -i -P -n
 ```
