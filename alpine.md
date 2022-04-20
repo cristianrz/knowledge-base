@@ -1,6 +1,6 @@
 # Alpine Linux
 
-## Service
+## Service management
 
 ```bash
 rc-update add sshd # enable

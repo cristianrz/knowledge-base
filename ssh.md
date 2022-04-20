@@ -55,3 +55,11 @@ ssh -R 8080:dest.lan:3000 -N -f gateway.lan
 * <mark>to `dest.lan:3000` (from my POV)</mark>
 
 Make sure `GatewayPorts` is set to `yes` in the remote SSH server.
+
+## SFTP chroot
+```sshd_config
+Match User user
+	ForceCommand sftp-server.exe
+	ChrootDirectory "E:\"
+	AuthorizedKeysFile "E:\.ssh\authorized_keys"
+```

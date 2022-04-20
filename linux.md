@@ -39,3 +39,21 @@ or
 ```
 # lsof -i -P -n
 ```
+
+## Run process as user without login
+
+```bash
+su -s /bin/bash -c '/path/to/your/script' testuser
+```
+
+## Check if something is already mounted
+
+```
+mountpoint /dev
+```
+
+## Octal/numeric permissions
+
+```shell
+$ stat -c "%a %n" *
+```

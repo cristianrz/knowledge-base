@@ -8,12 +8,6 @@ $ extension="${filename##*.}"
 $ filename="${filename%.*}"
 ```
 
-## Octal/numeric permissions
-
-```shell
-$ stat -c "%a %n" *
-```
-
 ## Get n'th line
 
 ```shell

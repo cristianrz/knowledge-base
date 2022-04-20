@@ -18,7 +18,7 @@ $ dpkg -S /etc/pam.d
  login, sudo, libpam-runtime, cups-daemon, openssh-server, cron, policykit-1, at, samba-common, ppp, accountsservice, dovecot-core, passwd: /etc/pam.d
 ```
 
-Run the following command, replacing <package-name> with the name of the package:
+Run the following command, replacing `<package-name>` with the name of the package:
 
 ```shell
 $ sudo apt install --reinstall -o Dpkg::Options::="--force-confask,confnew,confmiss" <package-name>
@@ -43,9 +43,9 @@ A Practical example when needing to reinstall all of the PulseAudio configuratio
 apt-cache pkgnames pulse |xargs -n 1 apt-get -o Dpkg::Options::="--force-confmiss" install --reinstall
 ```
 
-## Ports not openning
+## Ports not opening
 
-Need  to disable the firewall. If you uninstalled a firewall that was active you need to reinstall it and isable it before uninstalling again.
+Need to disable the firewall. If you uninstalled a firewall that was active you need to reinstall it and isable it before uninstalling again.
 
 ## Security policies
 
@@ -65,3 +65,50 @@ Remove
 
 the `map to guest` option (as bad user)
 any `guest ok` line in your smbd.conf
+
+
+## Mount
+
+Install package
+
+```
+sudo dnf install cifs-utils
+```
+
+mount manually:
+
+```
+sudo mount -t cifs //<vpsa_ip_address>/<export_share> /mnt/<local_share>
+```
+
+or `/etc/fstab`
+
+```fstab
+//isengard 	/media/isengard 	cifs 	uid=0,credentials=/home/tim/.smb,iocharset=utf8,vers=3.0,noperm 0 0
+```
+
+## Keep cifs alive
+```bash
+#!/bin/sh
+
+CIFS_DIR="/mnt"
+
+while sleep 5; do
+        echo alive > "$CIFS_DIR/keepalive.txt"
+done
+```
+
+```conf
+[Unit]
+Description = SMB keep alive
+After = network.target
+
+[Service]
+Type = simple
+ExecStart = /usr/local/bin/smb-alive
+Restart = on-failure
+TimeoutSec = 15
+
+[Install]
+WantedBy = multi-user.target
+```

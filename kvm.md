@@ -47,9 +47,7 @@ ssh -L 0.0.0.0:3000:localhost:4000 vmguest -p 5000 -l crz
 ## Iptables rules
 
 * INPUT: destination IP is on the host, even it has multiple port with multiple subnet
-
 * OUTPUT: source IP is from the host, either port
-
 * FORWARD: Neither destination IP on the host nor source IP from the host
 
 ## DCHP 
@@ -74,9 +72,11 @@ route add default gw 192.168.1.1
 echo "nameserver 1.1.1.1" > /etc/resolv.conf
 ```
 
-## Port forwarding
+# GPU Passthrough
 
-* WAN port 58537
-* LAN port 3022
-* Destination IP 192.168.1.101
-* WAN IP 149.22.12.168
+1. `intel_iommu=on iommu=pt` to `/etc/sysconfig/grub`
+1. Rebuild grub `grub2-mkconfig -o /etc/grub2-efi.cfg`
+1. Check `dmesg | grep -i -e DMAR -e IOMMU | grep enabled`
+1. Add `pci-stub.ids=10de:11fa` to `/etc/sysconfig/grub`
+1. Rebuild grub `grub2-mkconfig -o /etc/grub2-efi.cfg`
+1. Check `lspci -nnk -d 10de:13c2 | grep stub`

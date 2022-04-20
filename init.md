@@ -4,7 +4,7 @@
 $ who -r
 ```
 
-## Run it
+## Runit
 
 Add services:
 

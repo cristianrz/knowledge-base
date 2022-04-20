@@ -16,7 +16,6 @@ wget http://cdn.netbsd.org/pub/pkgsrc/packages/Linux/x86_64/Ubuntu-18.04_head/bo
 tar -xzf bootstrap.tar.gz -C /
 ```
 
-
 ## Update
 
 ```sh

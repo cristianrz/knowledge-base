@@ -1,4 +1,4 @@
-% Markdown + Pandoc
+# Markdown + Pandoc
 
 - The documents are written in markdown.
 - Find a markdown cheatsheet here.
@@ -9,7 +9,7 @@
 pandoc -s -f markdown -t html inputfile.md -o outputfile.html
 ```
 
-# Convert a document into pdf
+## Convert a document into pdf
 
 To convert a document into pdf, latex is necessary. The following packages need to be installed
 
