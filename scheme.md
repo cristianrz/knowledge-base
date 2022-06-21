@@ -1,12 +1,12 @@
 # Scheme notes
 
-- [First item of a list](#first-item-of-a-list)
+- [First item of a list](#first\ item\ of\ a\ list)
 - [All items except the first](#all-items-except-the-first)
 - [Prepend item to list](#prepend-item-to-list)
 - [Print to terminal](#print-to-terminal)
 - [Open REPL](#open-repl)
 - [Run file](#run-file)
-- [Compile](#compile)
+- [Compile](#Compile\ a)
 - [Apply a function to all elements of list](#apply-a-function-to-all-elements-of-list)
 - [Apply a function for all the items in pairs](#apply-a-function-for-all-the-items-in-pairs)
 - [Check for empty list](#check-for-empty-list)
@@ -110,7 +110,7 @@ chezscheme --script [FILE]
 lein run
 ```
 
-## Compile
+## Compile a
 
 **Scheme**
 
