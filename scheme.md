@@ -1,26 +1,5 @@
 # Scheme notes
 
-- [First item of a list](#first\ item\ of\ a\ list)
-- [All items except the first](#all-items-except-the-first)
-- [Prepend item to list](#prepend-item-to-list)
-- [Print to terminal](#print-to-terminal)
-- [Open REPL](#open-repl)
-- [Run file](#run-file)
-- [Compile](#Compile\ a)
-- [Apply a function to all elements of list](#apply-a-function-to-all-elements-of-list)
-- [Apply a function for all the items in pairs](#apply-a-function-for-all-the-items-in-pairs)
-- [Check for empty list](#check-for-empty-list)
-- [Combine strings](#combine-strings)
-- [If statement](#if-statement)
-- [Do one operation after the other](#do-one-operation-after-the-other)
-- [If statement with multiple operations](#if-statement-with-multiple-operations)
-- [Check for equality](#Check-for-equality)
-- [Assign variable](#Assign-variable)
-- [Define function](#Define-function)
-- [Hash tables/maps](#Hash-tables/maps)
-- [Create hash-map](#Create-hash-map)
-- [Pass list as arguments](#Pass-list-as-arguments)
-
 ## Notes
 
 * `tinyscheme` has some functions missing unless `init.scm` is added to the current directory. (\*) means that implementation needs `init.scm`.
