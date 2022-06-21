@@ -34,8 +34,8 @@ main(void)
 
 ## Rules for safety critical code
 
-1. Do not use goto statements, setjmp or longjmp constructs, and do not use
-direct or indirect recursion.
+1. Do not use `goto` statements, `setjmp` or `longjmp` constructs, and do not
+use direct or indirect recursion.
 
 2. Give all loops a fixed upper-bound (asserts).
 
@@ -52,7 +52,7 @@ safety critical code, typical values for N and M are N=2 and M=20.
 ```c
 if (!c_assert(p >= 0)) {
 		return ERROR;
-	}
+}
 ```
 
 with the assertion defined as follows:
@@ -68,10 +68,11 @@ with the assertion defined as follows:
 7. Check the return value of all non-void functions, and check the validity of
 all function parameters.
 
-8. Check the return value of all non-void functions, and check the validity of
-all function parameters.
+8.  The use of the preprocessor must be limited to the inclusion of header
+files and simple macro definitions.
 
-9. Limit the use of the preprocessor to file inclusion and simple macros.
+9. Compile with all possible warnings active; all warnings should then be
+addressed before the release of the software.
 
 10. The limit of two derefence operations per expression means that there should
 be no more than two star operators to the left or to the right of an assignment
