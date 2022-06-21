@@ -1,3 +1,4 @@
+# OpenSSL
 ## Make a certificate self signed
 
 ```bash
@@ -14,4 +15,16 @@ openssl pkcs12 -export -out key.pfx -inkey privkey.pem -in cert.pem -passout pas
 
 chown root:group key.pfx
 chmod g+r key.pfx
+```
+
+## Generate CSR and key from template
+
+```sh
+openssl.exe req -newkey rsa:2048 -keyout private.key -out my.csr -config config.conf
+```
+
+## Generate CSR and key with prompts
+
+```sh
+openssl.exe req -newkey rsa:2048 -keyout private.key -out my.csr 
 ```

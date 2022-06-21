@@ -27,3 +27,11 @@ Show forwards:
 netsh interface portproxy  show v4tov4
 ```
 
+## Set connection profile to private
+
+```powershell
+Get-NetConnectionProfile
+Set-NetConnectionProfile -InterfaceIndex 25 -NetworkCategory Private
+```
+
+

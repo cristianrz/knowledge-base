@@ -16,3 +16,11 @@ $ sed '1q;d' [FILE]
 $ awk 'NR == n' [FILE]
 ```
 
+## Stuff that creates a subshell
+* Parent gnome-terminal 61801
+* Bash process = 61697
+* `eval` keeps same shell
+* `{ }` keeps subshell
+* `bash -c` makes a subshell
+* `( )` makes a subshell
+* `|` makes a subshell

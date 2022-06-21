@@ -23,9 +23,8 @@ installing any dependencies.
 - For encoding, `encoding/json` and `encoding/xml`
 - `go build -pie` introduces ASLR.
 
-## Implementations
 
-### Goroutines
+## Goroutines
 
 ```go
 go func(a int){
@@ -33,7 +32,7 @@ go func(a int){
 } (x)
 ```
 
-### Port scanner
+## Port scanner
 
 ```go
 conn, err := net.Dial("tcp", "scanme.nmap.org:80")
@@ -44,7 +43,7 @@ if err != nil {
 conn.Close()
 ```
 
-### Wait
+## Wait
 
 ```go
 // creates the struct
@@ -65,7 +64,7 @@ for {
 wg.Wait()
 ```
 
-### Worker functions
+## Worker functions
 
 ```go
 func worker(ports chan int, wg *sync.WaitGroup){
@@ -76,9 +75,11 @@ func worker(ports chan int, wg *sync.WaitGroup){
 }
 ```
 
-### Buffered channel
+## Buffered channel
 
 ```go
 ch := make(chan int, 100)
 ```
+
+## 
 
