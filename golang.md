@@ -81,5 +81,14 @@ func worker(ports chan int, wg *sync.WaitGroup){
 ch := make(chan int, 100)
 ```
 
-## 
+## Pointers
+```go
+value := 21
 
+address = &value
+
+fmt.Println(*address) // = 21
+```
+
+- `(*p).field` is the same as `p.field`
+* `v.Scale(5)` is the same as `(&v).Scale(5)`
