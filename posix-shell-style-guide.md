@@ -31,13 +31,10 @@ the executable ones.
 
 ### Length
 
-**Requirement:** shell programs are shorter than 100 lines, otherwise they will
-need to be rewritten in a proper programming language.
+**Requirement:** shell programs are shorter than 100 lines. Proper programming
+languages are preferred for longer programs (e.g. C, Go)
 
 **Requirement:** functions are shorter than 50 lines.
-
-In general, if the script is more than 100 lines long, rewrite in a proper
-programming language.
 
 Prefer small and focused functions.
 
