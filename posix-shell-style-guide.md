@@ -53,15 +53,20 @@ function proves to be difficult, you find that errors are hard to debug, or you
 want to use a piece of it in several different contexts, consider breaking up
 the function into smaller and more manageable pieces.
 
+### Shebang
+
+**Requirement:** all scripts start with `#!/bin/sh`
+
 ### Layout
 
 **Requirement:** layout is the following:
 
 * Shebang
-* Comment with LICENSE and possibly short explanation of file/tool.
-* Global sets and traps
+* Comment with LICENSE
+* Comment with short explanation of file/tool.
+* sets
+* global definitions
 * Sources (i.e. `. script`)
-* Global variables
 * Functions
 * Main code
 
@@ -96,9 +101,6 @@ Any piece of code that `shfmt` outputs is acceptable.
 
 **Requirement:** All files go through `shellcheck -x`.
 
-### Shebang
-
-**Requirement:** all scripts start with `#!/bin/sh`
 
 ### Sets
 

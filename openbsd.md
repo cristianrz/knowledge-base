@@ -62,3 +62,45 @@ pkg_delete -v screen
 # autoremove
 pkg_delete -v -a
 ```
+
+## Partitioning
+
+```sh
+disklabel -E wd0
+
+# equivalent to mkfs
+newfs sd2a
+
+# equivalent to blkid
+sysctl hw.disknames
+
+# view partition table
+fdisk sd0
+
+# initialise blank disk
+fdisk -iy sd0
+```
+
+## Disklabel
+
+```sh
+> a a                  # add parition labeled as 'a'
+offset: [64]           # just click Enter key
+size: [62910476] 1.0G  # set partition size
+FS type: [4.2BSD]      # just click Enter key
+mount point: [none] /  # set mount point
+
+> a b                  # add parition labeled as 'b'
+offset: [2104512]      # just click Enter key
+size: [60806028] 1.1G
+FS type: [swap]        # just click Enter key
+
+# skip 'c'
+
+> a d                  # add parition labeled as 'd'
+
+...
+
+> p                    # check partitions in the end
+> q                    # save changes and exit
+```

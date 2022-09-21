@@ -92,3 +92,6 @@ fmt.Println(*address) // = 21
 
 - `(*p).field` is the same as `p.field`
 * `v.Scale(5)` is the same as `(&v).Scale(5)`
+
+## Find issues
+`golint` and `go vet`

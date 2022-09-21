@@ -60,3 +60,91 @@ chroot /var/alpine /usr/sbin/sshd
 ssh-keygen -A
 sshd
 ```
+
+## Connect to internet (wired)
+
+```sh
+ifconfig eth0 up
+udhcpc eth0
+```
+
+## Encrypted install
+
+```sh
+# install needed packages
+setup-apkrepos
+apk update
+apk add gptfdisk cryptsetup lvm2 lvm2-dmeventd e2fsprogs util-linux dosfstools mkinitfs
+/etc/init.d/dmeventd start
+
+# partition drive
+cfdisk /dev/nvme0n1
+# trigger kernel re-read
+hdparm -z /dev/hdc
+
+# create EFI
+mkfs.vfat /dev/nvme0n1p1
+
+# create boot partition
+mkfs.ext4 /dev/nvme0n1p2
+
+# create LVM
+cryptsetup luksFormat --type luks1 /dev/nvme0n1p3
+cryptsetup luksOpen /dev/nvme0n1p3 cryptpart
+pvcreate /dev/mapper/cryptpart
+vgcreate vgp /dev/mapper/cryptpart
+
+# setup thin pools
+lvcreate -l 100%FREE -T vgp/thinpool
+lvcreate -V200G -T vgp/thinpool -n home
+lvcreate -V200G -T vgp/thinpool -n root
+lvcreate -V8G   -T vgp/thinpool -n tmp
+lvcreate -V8G   -T vgp/thinpool -n log
+lvcreate -V8G   -T vgp/thinpool -n swap
+
+# format
+mkfs.ext4 /dev/vgp/root
+mkfs.ext4 /dev/vgp/home
+mkfs.ext4 /dev/vgp/tmp
+mkfs.ext4 /dev/vgp/log
+mkswap /dev/vgp/swap
+
+# setup chroot
+mount /dev/vgp/root /mnt
+
+mkdir -p /mnt/boot /mnt/var/log /mnt/tmp /mnt/home
+mount /dev/nvme0n1p2 /mnt/boot
+
+mkdir -p /mnt/boot/efi
+mount /dev/nvme0n1p1 /mnt/boot/efi
+mount /dev/vgp/home  /mnt/home
+mount /dev/vgp/log   /mnt/var/log
+mount /dev/vgp/tmp   /mnt/tmp
+
+# deploy alpine
+setup-disk -m sys /mnt
+
+vi /mnt/etc/mkinitfs/mkinitfs.conf
+# add features="... cryptsetup"
+
+mkinitfs -c /mnt/etc/mkinitfs/mkinitfs.conf -b /mnt/ $(ls /mnt/lib/modules/)
+
+# chroot into it
+mount -t proc /proc /mnt/proc
+mount --rbind /dev /mnt/dev
+mount --make-rslave /mnt/dev
+mount --rbind /sys /mnt/sys
+chroot /mnt
+swapon /dev/vg0/swap
+
+# install grub
+apk add grub-efi efibootmgr
+apk del syslinux
+
+vi /etc/default/grub
+# cryptdm=lvmcrypt
+# GRUB_PRELOAD_MODULES="luks cryptodisk part_gpt lvm"
+# GRUB_ENABLE_CRYPTODISK=y
+
+
+```
