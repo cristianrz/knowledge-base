@@ -18,3 +18,15 @@ RemainAfterExit=yes
 WantedBy=multi-user.target
 ```
 
+
+## List failed services
+
+```sh
+sudo systemctl list-units --failed
+```
+
+## Run a process with limited memory
+
+```sh
+systemd-run --user --pty --property MemoryHigh=2G firefox
+```

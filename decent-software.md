@@ -18,10 +18,10 @@ in that order.
  
 | Mainstream               | Alternative                     | Comments                                                |
 | ------------------------ | ------------------------------- | ------------------------------------------------------- |
-| File sharing             | `samba`                         |                                                         |
+| Backups                  | `rsync`                         |                                                         |
+| File sharing             | `sftp`                          |                                                         |
 | Firewall                 | `ufw`                           | let's be honest, `iptables` is not usable               |
 | General purpose language | `go`                            | cause cross-compilation                                 |
-| Incremental backups      | `borg`                          |                                                         |
 | JSON                     | `csv`                           |                                                         |
 | MediaWiki                | `cmark`                         |                                                         |
 | Offline reading          | `chromium` print to pdf         |                                                         |
@@ -32,10 +32,10 @@ in that order.
 | Server dashboard         | `cockpit`                       |                                                         |
 | Static site generator    | `cmark`                         |                                                         |
 | Text editor              | `mg`                            |                                                         |
-| VPN                      | `zerotier-one`                  |                                                         |
+| VPN                      | `wireguard`                     |                                                         |
 | `ansible`                | `/bin/sh` + `ssh`               |                                                         |
-| `apache`                 | `busybox`                       |                                                         |
-| `bash`                   | `ash`                          |                                                         |
+| `apache`                 | busybox httpd                   |                                                         |
+| `bash`                   | `ash`                           |                                                         |
 | `chrome`                 | `chromium`                      | big but SECURITY                                        |
 | `coreutils`              | `busybox`                       |                                                         |
 | `docker`                 | `chroot`                        | only for trusted software, otherwise `cockpit-machines` |

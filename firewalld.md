@@ -12,6 +12,12 @@ firewall-cmd --list-all-zones
 firewall-cmd --add-service=ssh --zone=public
 ```
 
+## New zone
+
+```
+firewall-cmd --permanent --new-zone=public
+```
+
 ## Assign interface to zone
 
 ```

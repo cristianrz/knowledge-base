@@ -1,4 +1,4 @@
-	# SELinux
+# SELinux
 
 ## Reset SELinux
 
@@ -117,7 +117,7 @@ semanage fcontext -d "/web(/.*)?"
 
 ## Silent denials
 
-Log everything
+Log everything (takes a while to activate!)
 
 ```
 semobule -DB
