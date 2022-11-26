@@ -57,3 +57,18 @@ mountpoint /dev
 ```shell
 $ stat -c "%a %n" *
 ```
+
+## Convert from timestamp to date
+
+```term
+$ date -d @1363292159.532
+Thu Mar 14 21:15:59 CET 2013
+```
+
+## Find file corresponding to an inode
+
+```term
+$ find /sys -xdev -inum 30
+/sys/devices/system/cpu/online
+```
+

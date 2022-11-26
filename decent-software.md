@@ -4,13 +4,13 @@
 
 Opinionated list of sysadmin/development software that is/has:
 
-2. Minimal configuration: software should work after a new user spending less than 5 minutes configuring/fixing it
-3. Secure
-4. Self hosted
-5. Convenient: e.g. you can technically browse the web from your terminal, but it's not convenient
-6. Already installed on Unix systems
-7. Cross-platform
-8. Small
+1. Minimal configuration: software should work after a new user spending less than 5 minutes configuring/fixing it
+2. Secure
+3. Self hosted
+4. Convenient: e.g. you can technically browse the web from your terminal, but it's not convenient
+5. Already installed on Unix systems
+6. Cross-platform
+7. Small
 
 in that order. 
 
