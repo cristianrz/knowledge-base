@@ -23,7 +23,6 @@ installing any dependencies.
 - For encoding, `encoding/json` and `encoding/xml`
 - `go build -pie` introduces ASLR.
 
-
 ## Goroutines
 
 ```go
@@ -94,4 +93,5 @@ fmt.Println(*address) // = 21
 * `v.Scale(5)` is the same as `(&v).Scale(5)`
 
 ## Find issues
+
 `golint` and `go vet`

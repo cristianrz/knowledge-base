@@ -94,13 +94,14 @@ cryptsetup luksOpen /dev/nvme0n1p3 cryptpart
 pvcreate /dev/mapper/cryptpart
 vgcreate vgp /dev/mapper/cryptpart
 
-# setup thin pools
-lvcreate -l 100%FREE -T vgp/thinpool
-lvcreate -V200G -T vgp/thinpool -n home
-lvcreate -V200G -T vgp/thinpool -n root
-lvcreate -V8G   -T vgp/thinpool -n tmp
-lvcreate -V8G   -T vgp/thinpool -n log
-lvcreate -V8G   -T vgp/thinpool -n swap
+# setup thin pools <- we dont use thin pools anymore
+#lvcreate -l 100%FREE -T vgp/thinpool
+lvcreate -L XG -n name vgp
+#lvcreate -V200G -T vgp/thinpool -n home
+#lvcreate -V200G -T vgp/thinpool -n root
+#lvcreate -V8G   -T vgp/thinpool -n tmp
+#lvcreate -V8G   -T vgp/thinpool -n log
+#lvcreate -V8G   -T vgp/thinpool -n swap
 
 # format
 mkfs.ext4 /dev/vgp/root

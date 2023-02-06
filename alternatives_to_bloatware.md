@@ -7,119 +7,64 @@ TL;DR: is about the unix principle, having a fully functional system pretty damn
 ## TOC
 
 1. [ANDROID APPS](#android-apps)  
-
 2. [Command Line](#command-line)  
-
 3. [Communication](#communication)  
-
 3.1. [Desktop Client](#desktop-client)  
-
 4. [Data](#data)  
-
 5. [Decentralized Networking](#decentralized-networking)  
-
 6. [Emulation And Virtualization](#emulation-and-virtualization)  
-
 7. [File Utilities](#file-utilities)  
-
 8. [Filesharing](#filesharing)  
-
 9. [Forensics](#forensics)  
-
 10. [Hardware](#hardware)  
-
 11. [Monitoring](#monitoring)  
-
 11.1. [Benchmarking](#benchmarking)  
-
 11.2. [System Information](#system-information)  
-
 11.3. [System Monitoring](#system-monitoring)  
-
 12. [Multimedia](#multimedia)  
-
 12.1. [ASCii Art](#ascii-art)  
-
 12.2. [Audio](#audio)  
-
 12.3. [Image](#image)  
-
 12.4. [Metadata](#metadata)  
-
 12.5. [Video](#video)  
-
 13. [Network Setup](#network-setup)  
-
 14. [Office](#office)  
-
 15. [Package Management](#package-management)  
-
 16. [Pentesting](#pentesting)  
-
 16.1. [Exploitables](#exploitables)  
-
 16.2. [Network Scanner](#network-scanner)  
-
 16.3. [Network Tampering](#network-tampering)  
-
 16.4. [Password Cracking](#password-cracking)  
-
 16.5. [Vulnerability Scanner](#vulnerability-scanner)  
-
 17. [Privacy](#privacy)  
-
 18. [Programming](#programming)  
-
 19. [Remote Access](#remote-access)  
-
 20. [Science And Engineering](#science-and-engineering)  
-
 21. [Security](#security)  
-
 21.1. [Containment](#containment)  
-
 21.2. [Honeypots](#honeypots)  
-
 21.3. [Host Intrusion](#host-intrusion)  
-
 21.4. [Network Intrusion](#network-intrusion)  
-
 22. [Server](#server)  
-
 22.1. [Server Authentication](#server-authentication)  
-
 23. [System Utilities](#system-utilities)  
-
 23.1. [Init](#init)  
-
 23.2. [Job Scheduler](#job-scheduler)  
-
 24. [X Desktop](#x-desktop)  
 
 ## ANDROID APPS
 
 * __Launcher__: [OpenLauncher](https://github.com/OpenLauncherTeam/openlauncher) (8,3 MB) -> [Catapult](https://bitbucket.org/lenny_kano/catapult) (4,7 MB) -> [Lawnchair](https://lawnchair.info/) (3,1 MB) -> [Paper Launch](https://github.com/devmil/PaperLaunch) (2,8 MB) -> [Launch Time](http://quaap.com/D/LaunchTime) (2,5 MB) -> [Silverfish](https://github.com/stanipintjuk/Silverfish) (1,5 MB) -> [T-UI](https://github.com/Andre1299/TUI-ConsoleLauncher) (1,2 MB) -> [Search Based Launcher](https://github.com/vackosar/search-based-launcher/) (622 KB) -> [KISS](http://kisslauncher.com/) (431 KB) -> [Emerald Launcher](https://github.com/HenriDellal/emerald) (172 KB) -> [Hayai Launcher](https://github.com/seizonsenryaku/HayaiLauncher/blob/HEAD/README.md) (106 KB) -> [Fast](https://github.com/ligi/FAST) (76 KB) -> [Essential Launcher](https://clemensbartz.de/essential-launcher/) (26 KB) -> [Null Launcher](https://github.com/notriddle/null-launcher) (12 KB)
-
 * __Facebook__: [FaceSlim](https://github.com/indywidualny/FaceSlim) (1,3 MB) -> [Tinfoil for Facebook](https://github.com/velazcod/Tinfoil-Facebook) (525 KB) -> [SlimSocial](https://github.com/rignaneseleo/SlimSocial-for-Facebook) (313 KB)
-
 * __Twitter__: Tinfoil for Twitter -> [SlimSocial for Twitter](https://github.com/rignaneseleo/SlimSocial-for-Twitter) (699 KB)
-
 * __YouTube__: [NewPipe](https://newpipe.schabi.org/) (5,0 MB) -> [SkyTube](http://skytube-app.com/) (4,9 MB) -> [WebTube](https://github.com/martykan/webTube/blob/HEAD/README.md) (2,1 MB) -> [MinTube](https://github.com/imshyam/mintube) (981 KB)
-
 * __Photo Gallery__: [Simple Gallery](https://github.com/SimpleMobileTools/Simple-Gallery) (12 MB) -> [LeafPic](https://gitlab.com/HoraApps/LeafPic) (10/2016: 4.3 MB) -> [Cameraroll](https://github.com/kollerlukas/Camera-Roll-Android-App) (2.4 MB) -> [A Photo Manager](https://github.com/k3b/APhotoManager) (1.3MB)
-
 * __E-Books__: [Document Viewer](https://f-droid.org/en/packages/org.sufficientlysecure.viewer/) (8.5 MB)
-
 * __Notes__: [Orgzly](https://github.com/orgzly/orgzly-android) (3.9 MB) -> [Markor](https://github.com/gsantner/markor) (3 MB) -> [miniNoteViewer](https://github.com/monolifed/mininoteview) (452 KB)
-
 * __Keyboards__: Hacker's Keyboard (1,2 MB) -> [Simple Keyboard](https://f-droid.org/en/packages/rkr.simplekeyboard.inputmethod/) (835 KB)
-
 * __File Manager__: Amaze -> OI File Manager
-
 * __Dictionary__: Quickdic
-
 * __Firewall__: NetGuard -> AFWall+
-
 * __E-Mail__: K-9 Mail
 
 Most apps are from F-Droid, we are just starting.
@@ -127,39 +72,22 @@ Most apps are from F-Droid, we are just starting.
 ## Command Line
 
 * __Commands Cheatsheet__: [CLI Companion](https://launchpad.net/clicompanion) -> [xman](https://www.x.org/archive/X11R7.5/doc/man/man1/xman.1.html) -> [cheat](https://github.com/chrisallenlane/cheat) / [howdoi](https://github.com/gleitz/howdoi) / [clf](https://github.com/ncrocfer/clf) / [fu](https://github.com/samirahmed/fu) / [bro](http://bropages.org/) -> [curl cht.sh/PROGRAM](https://github.com/chubin/cheat.sh)
-
 * __Copy and Move Progress Bar__: [progress](https://github.com/Xfennec/progress) -> [Advanced Copy](https://github.com/atdt/advcpmv)
-
 * __Daemonize__: [dtach](https://github.com/crigler/dtach) -> [abduco](https://github.com/martanne/abduco) -> [GNU Screen](https://www.gnu.org/software/screen/)
-
 * __Directory Bookmarks__: [Apparix](https://micans.org/apparix/) -> [fasd](https://github.com/clvv/fasd)
-
 * __Framebuffer Environment__: [jfbterm](https://github.com/ruo91/jfbterm)/[Fbterm](https://code.google.com/archive/p/fbterm/) -> [yaft (because sixel)](https://github.com/uobikiemukot/yaft) -> [hterm (because regis)](https://github.com/new299/hackterm) -> [Fbpad](https://github.com/aligrudi/fbpad) -> [FramebufferUI](https://github.com/8l/fbui)
-
 * __Hacker Culture__: [ddate](https://github.com/bo0ts/ddate), [fortune](https://github.com/ruanyf/fortunes), [The Hacker Test](https://packages.debian.org/source/unstable/purity), [The Jargon File](https://packages.debian.org/source/unstable/jargon)
-
 * __[Login](https://en.wikipedia.org/wiki/Getty_(Unix))__: [fgetty](http://www.fefe.de/fgetty/) -> [mingetty](https://sourceforge.net/projects/mingetty/) -> stty (GNU Coreutils) -> agetty (util-linux)
-
 * __Menu__: [pdmenu](https://joeyh.name/code/pdmenu/) -> [tmenu](https://github.com/dhamidi/tmenu) -> [iSelect](http://www.ossp.org/pkg/tool/iselect/) -> [pick](https://github.com/mptre/pick) -> [fzy](https://github.com/jhawthorn/fzy) -> [slmenu](https://bitbucket.org/rafaelgg/slmenu)
-
 * __Multiplexer__: [Byobu](https://github.com/dustinkirkland/byobu) -> [Tmux](https://github.com/tmux/tmux) -> [GNU Screen](https://www.gnu.org/software/screen/) (+[sixel patch](https://gist.github.com/saitoha/7546579)) -> [dvtm](http://www.brain-dump.org/projects/dvtm/)
-
 * __Notification__: [skroll](http://z3bra.org/skroll/)
-
 * __Progress Bar__: [vramsteg](https://github.com/mogaal/vramsteg) -> [clpbar](http://clpbar.sourceforge.net/)- > [pv - Pipe Viewer](https://github.com/icetee/pv) -> [sob - simple output bar](http://git.codemadness.nl/sob/) -> [dbar](https://sites.google.com/site/gotmor/)
-
 * __Scripting__: [Multipipe](http://multipipe.sourceforge.net/) -> [GNU Parallel](https://www.gnu.org/software/parallel/) (+ [GNU SQL](https://www.gnu.org/software/parallel/sql.html)) -> [execline](https://github.com/skarnet/execline) -> [Expect](https://core.tcl.tk/expect/index) -> [empty](https://github.com/ierton/empty)
-
 * __Shells__: [Xonsh](https://github.com/xonsh/xonsh) -> [PowerShell](https://github.com/PowerShell/PowerShell) -> [Bash](https://www.gnu.org/software/bash/) (+ [bash-completion](https://github.com/scop/bash-completion) + [bash-completion-extras](https://git.eckner.net/Erich/bash-completion-extras)) -> [zsh](http://www.zsh.org/) -> [tcsh](https://github.com/tcsh-org/tcsh) -> [PC-DCL](https://github.com/MichelValentin/PC-DCL) -> [mksh](https://github.com/MirBSD/mksh) -> [dash](http://gondor.apana.org.au/~herbert/dash/) -> [rc](https://github.com/rakitzis/rc) -> [s](https://github.com/rain-1/s) -> [Danshell](http://danshell.sourceforge.net/)
-
 * __Terminal Colorizer__: [colout](http://nojhan.github.io/colout/) -> [lolcat](https://github.com/busyloop/lolcat) -> [Bashish](https://github.com/arnognulf/bashish)
-
 * __Terminal Dropdown__: [tdrop](https://github.com/noctuid/tdrop) -> [YeahConsole](https://github.com/rduplain/yeahconsole) -> [alwaysontop](https://github.com/swirepe/alwaysontop)
-
 * __Terminal Emulator__: [PuTTY](https://www.putty.org/) -> [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) -> [Terminology](https://www.enlightenment.org/about-terminology) -> [rxvt-unicode](https://github.com/exg/rxvt-unicode) (a.k.a. urxvt) -> [Termite](https://github.com/thestinger/termite) -> [UXTerm](https://invisible-island.net/xterm/) (XTerm) -> [st](https://st.suckless.org/) -> [Qodem](http://qodem.sourceforge.net/)
-
 * __Terminal Pager__: [most](http://www.jedsoft.org/most/) -> [less](http://www.greenwoodsoftware.com/less/) (+ [lesspipe](https://www-zeuthen.desy.de/~friebel/unix/lesspipe.html))
-
 * __Terminal Screensaver__: [bb](http://aa-project.sourceforge.net/bb/), [sl](https://github.com/mtoyoda/sl), [tty-clock](https://github.com/xorg62/tty-clock), CMatrix, cowsay (or cowthink), [rice](https://github.com/janbrennen/rice), [Asciiquarium](https://github.com/cmatsuoka/asciiquarium), [pipes](https://github.com/pipeseroni/pipes.sh), [nyan.sh](https://gist.github.com/wting/5278321), [rickrollrc](https://github.com/keroserene/rickrollrc), [NCMatrix](https://github.com/mayfrost/NCMatrix), [terminal-screensaver](https://github.com/xiongchiamiov/terminal-screensaver), [No More Secrets](https://github.com/bartobri/no-more-secrets)
 
 ## Communication
@@ -1167,17 +1095,11 @@ Most apps are from F-Droid, we are just starting.
 * __Tunneling__: HTTPTunnel -> VTun -> [ProxyChains](https://github.com/rofl0r/proxychains-ng) -> [VPNEncap](https://github.com/whussup/vpnencap) -> [VPNCHAINS](https://sourceforge.net/p/vpnchains/wiki/Home/)
 
 * __Tunneling VM__: [PIA Tunnel](https://www.privateinternetaccess.com/forum/discussion/1389/pia-tunnel-a-virtual-machine-vpn-tunnel) -> [Whonix](https://www.whonix.org/)
-
 * __Usenet Server__: [InterNetNews](https://www.eyrie.org/~eagle/software/inn/) -> [Leafnode](http://www.leafnode.org/)
-
 * __VoIP__:  GNU SIP Witch -> GNU Gatekeeper -> Mumble -> [Linphone (linphonec)](https://www.linphone.org/) -> PJSIP -> [sscall](https://github.com/Drakevr/sscall)
-
 * __VPN (Overlay)__: strongSwan -> Libreswan -> OpenVPN (+ [PiVPN](http://www.pivpn.io/)) -> [WireGuard](https://github.com/WireGuard/wireguard-rs)
-
 * __VPN (Pseudo-wire)__: Tunneldigger -> OpenMesher
-
 * __Web Caching__: Decentraleyes on a web browser -> [Squid](http://www.squid-cache.org/) (+ [SquidGuard](http://squidguard.org/) for Web Filtering)
-
 * __Web Filtering__: Ad blocker on a web browser -> [Pi-hole](https://github.com/pi-hole/pi-hole) -> DansGuardian -> [Privoxy](http://www.privoxy.org/) -> [Hostsblock](https://github.com/gaenserich/hostsblock)
 
 * __Web Server__: Apache -> Nginx -> lighttpd -> Hiawatha -> Monkey -> [GNU MyServer](https://directory.fsf.org/wiki/GNU_MyServer) -> webfs -> [darkhttpd](https://github.com/ryanmjacobs/darkhttpd) -> [Bucky](https://github.com/kibook/bucky) (Bucktooth HTTP exit)

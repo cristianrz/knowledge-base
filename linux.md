@@ -72,3 +72,18 @@ $ find /sys -xdev -inum 30
 /sys/devices/system/cpu/online
 ```
 
+## Find with multiple conditions and execs
+
+```bash
+find . \( $COND1 -exec $CMD1 \) , \( $COND2 -exec $CMD2 \)
+```
+
+## Quotas
+
+- For XFS systems, on `/etc/default/grub`
+
+```bash
+GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX rootflags=uquota,pquota"
+```
+
+
