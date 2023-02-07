@@ -7,3 +7,4 @@
 | `/usr`       | `$HOME/.local`       |
 | `/var/cache` | `$HOME/.cache`       |
 | `/var/lib`   | `$HOME/.local/state` |
+
