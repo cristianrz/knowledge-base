@@ -1,6 +1,7 @@
 # E-mail
 
 ## Send e-mails from command line
+
 1. Install `msmtp` and `s-nail`
 2. Configure `~/.msmtprc`
 
