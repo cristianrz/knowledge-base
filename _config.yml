@@ -1,6 +1,6 @@
 title: Knowledge base
 description: Knowledge base
-theme: just-the-docs
+remote_theme: rundocs/jekyll-rtd-theme
 
 url: https://cristianrz.github.io/knowledge-base/
 
