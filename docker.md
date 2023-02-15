@@ -57,3 +57,44 @@ RUN cd && curl "https://raw.githubusercontent.com/dylanaraps/promptless/master/i
 
 CMD /bin/bash -l
 ```
+
+## Good reaping init file
+
+```bash
+#!/bin/sh  
+  
+set -eu  
+  
+USER=user  
+LOG_FILE="/var/log/file.log"  
+  
+cleanup(){  
+       #printf '=> Received SIGTERM, reaping procesess... '  
+  
+       kill -15 "$PROCESS1" || true  
+       kill -15 "$PROCESS2" || true  
+       wait  
+       #echo OK  
+  
+       #echo '=> All done, exiting'  
+       exit 0  
+}  
+  
+#printf '=> Setting up trap...'  
+trap 'cleanup' 15  
+#echo OK  
+  
+#printf '=> Start process1 in the background... '  
+/bin/su - "$USER" -c "exec process1" &  
+PROCESS1="$!"  
+#echo OK  
+  
+#printf '=> Starting process2 process... '  
+/bin/su - "$USER" -c "exec process" &  
+PROCESS2="$!"  
+#echo OK  
+  
+#echo '=> Startup finished.'  
+  
+wait
+```

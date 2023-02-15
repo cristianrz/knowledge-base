@@ -143,6 +143,25 @@ loginctl enable-linger $USER
 ls /var/lib/systemd/linger
 ```
 
+## nspawn
 
+```bash
+(
+	set -eux
+	image="jellyfin/jellyfin"
+	name="jellyfin"
+	
+	docker pull "$image"
+	docker create --name "$name" "$image"
+	trap 'docker rm "$name"' 2
+	trap 'docker rm "$name"' 15
+
+	mkdir -p "/var/lib/machines/${name}"
+
+	docker export "$name" | ( cd "/var/lib/machines/${name}" && tar xvf - )
+)
+
+tmux new systemd-nspawn --as-pid2 -M jellyfin /jellyfin/jellyfin
+```
 
 

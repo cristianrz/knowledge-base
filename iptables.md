@@ -2,22 +2,27 @@
 
 ## Port forward
 
-iptables is the fastest way because it's in the kernel
+`iptables` is the fastest way because it's in the kernel
 
 ```sh
+PROTOCOL=tcp
+SRC_PORT=8022
+DST_IP=192.168.122.145
+DST_PORT=22
+
 iptables -t nat \
 	-I PREROUTING \
-	-p tcp \
+	-p "$PROTOCOL" \
 	--dport "$SRC_PORT" \
 	-j DNAT \
 	--to-destination "${DST_IP}:${DST_PORT}" 
 
 iptables \
 	-I FORWARD \
-	-p tcp \
+	-p "$PROTOCOL" \
 	-i "$INTERFACE" \
 	--dport "$SRC_PORT" \
-	-d "$DST_IP" 
+	-d "$DST_IP" \
 	-j ACCEPT
 ```
 
