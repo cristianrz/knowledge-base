@@ -86,4 +86,18 @@ find . \( $COND1 -exec $CMD1 \) , \( $COND2 -exec $CMD2 \)
 GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX rootflags=uquota,pquota"
 ```
 
+## Send to another process stdout
+
+```bash
+echo "test log1" >> /proc/$PID/fd/1
+```
+
+## nsswitch.conf
+
+- files -> /etc/hosts
+- myhostname, mymachines -> systemd-container
+- resolve -> systemd-resolved
+- dns -> /etc/resolv.conf
+
+https://news.ycombinator.com/item?id=19439722
 

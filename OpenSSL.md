@@ -35,11 +35,6 @@ openssl req -new -key "$HOST".key -out "$HOST".csr -sha256
 openssl x509 -req -in "$HOST".csr -CA "$CA".pem -CAkey "$CA"-key.pem -set_serial 100 -days 365 -outform PEM -out "$HOST".pem -sha256
 ```
 
-## Generate CSR
-
-```sh
-```
-
 ## Generate CSR and key from template
 
 ```sh
@@ -139,4 +134,10 @@ openssl pkcs12 \
 
 rm ${client}.csr
 #rm ${client}.pem
+```
+
+## Check certificate contents
+
+```bash
+openssl x509 -in cert.pem -text
 ```

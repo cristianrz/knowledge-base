@@ -98,3 +98,34 @@ PROCESS2="$!"
   
 wait
 ```
+
+## Good Dockerfile
+
+```Dockerfile
+FROM docker.io/debian:stable-slim  
+
+RUN apt-get -q update \  
+       && apt-get -y dist-upgrade \  
+       && apt-get -q install -y --no-install-recommends apt-utils curl iproute2 openresolv procps qbittorrent-nox util-linux  
+wireguard-tools \  
+       && rm -rf /var/lib/apt/lists/* \  
+       && useradd -m qbit \  
+       && chown -R qbit:qbit /home/qbit  
+
+COPY ./init /init  
+
+WORKDIR /home/qbit  
+
+ENTRYPOINT ["/init"]  
+
+EXPOSE 8080  
+
+HEALTHCHECK CMD pgrep qbittorrent-nox && curl -v gnu.org
+```
+
+## User docker with podman socket
+
+```bash
+systemctl --user enable --now podman.socket
+export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock
+```
