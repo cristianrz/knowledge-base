@@ -2,7 +2,7 @@
 
 ## SSH key not working
 
-==First of all, check what plugin failed. There are two, a normal one and a V2 one. If the normal one failed but V2 succeeded everything is OK and you can ignore the below.==
+<mark>First of all, check what plugin failed. There are two, a normal one and a V2 one. If the normal one failed but V2 succeeded everything is OK and you can ignore the below.</mark>
 
 Otherwise:
 
