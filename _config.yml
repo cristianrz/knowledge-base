@@ -1,0 +1,8 @@
+title: Knowledge base
+description: Knowledge base
+remote_theme: rundocs/jekyll-rtd-theme
+
+url: https://cristianrz.github.io/knowledge-base/
+
+aux_links:
+  Template Repository: https://github.com/just-the-docs/just-the-docs-template
