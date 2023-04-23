@@ -101,3 +101,94 @@ echo "test log1" >> /proc/$PID/fd/1
 
 https://news.ycombinator.com/item?id=19439722
 
+## Performance
+
+1. Disable cores:
+
+```bash
+echo 0 > /sys/devices/system/cpu/cpu<n>/online
+```
+
+2. Check frequency range
+
+```bash
+cpupower frequency-info
+```
+
+2. Adjust frequencies and governor
+
+```bash
+# set governor
+cpupower frequency-set -g <governor>
+
+# max freq
+cpupower frequency-set -u <freq>
+
+# min freq
+cpupower frequency-set -d <freq>
+```
+
+## Laptop not going to sleep
+
+```ini
+[Unit]
+Description=Powertop tunings
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/sbin/powertop --auto-tune
+
+[Install]
+WantedBy=multi-user.target
+```
+
+## Run init daemon as user
+
+```bash
+runuser -s /bin/bash <user> -c "$*"
+```
+
+`setpriv` is better for dropping privileges since it doesn't use PAM and it doesn't spawn an extra process
+
+```bash
+setpriv --no-new-privs --reuid=1000 --regid=1000 --init-groups --reset-env "$@"
+```
+
+## ACLs
+
+```bash
+# default for new files
+setfacl -d -R -m u:theUsersName:rwx
+
+# actually set permission
+setfacl -R -m u:theUsersName:rwx
+```
+
+# Tar pipe
+
+```bash
+( cd "$src" && tar -cf - .) | (cd "$dst" && tar xvf - )
+```
+
+## Routing tables
+
+```bash
+# show all rules
+ip rule list
+
+# create table
+echo 200 custom >> /etc/iproute2/rt_tables
+
+# from ip 
+ip rule add from <source address> lookup <table name>
+
+# from interface
+ip rule add iif <interface> table isp2 priority 1000
+
+# add default gw
+ip route add default via 192.168.30.1 dev eth1 table custom
+
+# show table 1
+ip route show table 1
+```

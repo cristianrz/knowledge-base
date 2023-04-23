@@ -45,3 +45,16 @@ tmux new-session -d -s abc 'my_command'
 - `ctrl + b c`: new tab
 - `ctrl + b NUMBER`: go to tab NUMBER
 
+## Bootstrap
+
+```bash
+#!/bin/bash  
+  
+tmux ls | grep '#!' > /dev/null || (  
+ tmux new-session -d -s '#!' -n 'chat' "weechat"  
+ tmux new-window -n 'mail' 'firejail mutt'  
+ tmux new-window -n 'shell' -a  
+)  
+exec tmux attach -t '#!'
+```
+

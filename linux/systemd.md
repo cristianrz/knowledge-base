@@ -165,3 +165,68 @@ tmux new systemd-nspawn --as-pid2 -M jellyfin /jellyfin/jellyfin
 ```
 
 
+```bash
+MACHINE_NAME=vaultcloud
+MACHINE_DIR="/var/lib/machines/${MACHINE_NAME}"
+
+mkdir -p "${MACHINE_DIR}/usr/bin"
+
+cd "$MACHINE_DIR"
+
+wget 'https://cdimage.ubuntu.com/ubuntu-base/releases/22.04.1/release/ubuntu-base-22.04.1-base-amd64.tar.gz'
+
+cp $(command -v busybox) "${MACHINE_DIR}/usr/bin"
+
+cd "${MACHINE_DIR}/usr/bin"
+
+ln -s busybox ls
+ln -s busybox tar
+ln -s busybox ash
+ln -s busybox sh
+
+systemd-nspawn -U -D "$MACHINE_DIR"
+
+passwd root
+
+apt install -y systemd-sysv
+
+exit
+
+systemd-nspawn -b -U -D "$MACHINE_DIR"
+```
+
+## Unencrypted journald remote logging
+
+```bash
+systemctl edit systemd-journal-remote.service
+```
+
+```ini
+[Service]
+ExecStart=
+ExecStart=/usr/lib/systemd/systemd-journal-remote --listen-http=-3 --output=/var/log/journal/remote/
+```
+
+```bash
+systemctl enable --now systemd-journal-remote.service
+```
+
+On `/etc/systemd/journal-upload.conf`
+
+```ini
+[Upload]
+URL=http://192.168.0.100:19532
+```
+
+```bash
+systemctl enable --now systemd-journal-upload.service
+```
+
+To check logs
+
+```bash
+journalctl --follow --directory=/var/log/journal/remote _HOSTNAME=raspberry-pi-3
+```
+
+https://web.archive.org/web/20221028110703/https://harryhodge.co.uk/posts/2021/07/centralised-logging-with-systemd-and-journald/
+

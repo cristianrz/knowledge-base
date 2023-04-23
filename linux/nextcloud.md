@@ -1,4 +1,6 @@
-# Nextcloud in a chroot
+% Nextcloud
+
+## Nextcloud in a chroot
 
 ### Install dependencies
 
@@ -9,7 +11,7 @@ sudo apt install php-gd php-mysql php-curl php-mbstring php-intl
 sudo apt install php-gmp php-bcmath php-imagick php-xml php-zip
 ```
 
-## Setup mysql
+### Setup mysql
 
 Start mysql
 
@@ -29,7 +31,7 @@ mysql> FLUSH PRIVILEGES;
 mysql> QUIT;
 ```
 
-## Get installer
+### Get installer
 
 ```sh
 mkdir -p /var/www/nextcloud
@@ -40,7 +42,7 @@ wget https://download.nextcloud.com/server/installer/setup-nextcloud.php
 chown -R www-data:www-data /var/www/nextcloud
 ```
 
-## Setup nginx
+### Setup nginx
 
 ```conf
 upstream php-handler {
@@ -225,4 +227,13 @@ server {
         try_files $uri $uri/ /index.php$request_uri;
     }
 }
+```
+
+## Re-scan
+
+```bash
+sudo -u $NC_USER php \
+	--define apc.enable_cli=1  \
+	/var/www/nextcloud/occ \
+	files:scan --all
 ```

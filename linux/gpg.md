@@ -1,4 +1,4 @@
-# GPG
+# `GPG
 
 ## Revoke ID
 

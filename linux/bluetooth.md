@@ -15,7 +15,8 @@ Start `bluetooth.service`.
 Run
 
 ```term
-$ bluetoothctl
+$ 
+bluetoothctl
 ```
 
 to be greeted by its internal command prompt. Then enter:
@@ -48,3 +49,10 @@ Finally, if you want to automatically connect to this device in the future:
 systemctl --user restart pipewire{,-pulse}
 ```
 
+## Protocol not available
+
+- Make sure you have uninstalled `pulseaudio-module-bluetooth`
+- installed `libspa-0.2-bluetooth`
+- issue `systemctl --user stop pipewire-pulse.service pipewire.service`
+- disconnect the headset and reconnect
+- 

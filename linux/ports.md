@@ -1,4 +1,4 @@
-mm# Ports
+# Ports
 
 - 6466: Android remote control
 - 6467: Android remote control
