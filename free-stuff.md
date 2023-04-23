@@ -1,4 +1,4 @@
-% Free stuff
+# Free internet services
 
 - Domain names:
 	- https://freedns.afraid.org/

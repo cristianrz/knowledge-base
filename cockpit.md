@@ -1,6 +1,6 @@
-% cockpit
+# cockpit
 
-# Disable SSL and unsafe TLS
+## Disable SSL and unsafe TLS
 
 Create file /etc/systemd/system/cockpit.service.d/ssl.conf containing:
 

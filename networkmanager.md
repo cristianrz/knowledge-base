@@ -1,6 +1,6 @@
-% NetworkManager
+# NetworkManager
 
-# Interface is fully unmanaged (Ubuntu)
+## Interface is fully unmanaged (Ubuntu)
 
 Ubuntu installs a config file that sets most devices unmanaged `/usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf`
 

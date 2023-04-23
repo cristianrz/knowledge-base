@@ -1,4 +1,4 @@
-% restic
+# restic
 
 ## Cheatsheet
 

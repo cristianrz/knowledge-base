@@ -1,6 +1,6 @@
-% metasploit
+# metasploit
 
-# Search for exploits
+## Search for exploits
 
 ```bash
 searchsploit samba 2.2

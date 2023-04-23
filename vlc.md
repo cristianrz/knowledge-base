@@ -1,6 +1,8 @@
-% VLC cheatsheet
+# VLC
 
-# File Operations
+## Keyboard shortcuts
+
+### File Operations
 
 * CTRL + O : Open a single  file
 * CTRL + SHIFT + O : Open multiple files
@@ -12,7 +14,7 @@
 * CTRL + R : Convert and save file
 * CTRL + S : Stream your media locally or on the internet
 
-# Program Operations
+### Program Operations
 
 * CTRL + Q or ALT + F4 or ALT + Q : Quit
 * CTRL + E : Open the adjustment and effects menu
@@ -22,7 +24,7 @@
 * F1 : Help
 * SHIFT + F1 : About
 
-# Playing Operations
+### Playing Operations
 
 * SPACE : Play and Pause a file
 * N : Next Track
@@ -38,19 +40,19 @@
 * L : Loop off, one or all
 * R : Random on and off
 
-# Subtitles
+### Subtitles
 
 * G : Decrease subtitle delay
 * H : Increase subtitle delay
 * V : Cycle through subtitles
 
-# Playing Speed
+### Playing Speed
 
 * [ : Decrease playing speed
 * ] : Increase playing speed
 * = : Normal playing speed
   
-# Quick Forward and Backward
+### Quick Forward and Backward
   
 * SHIFT + RIGHT ARROW : 3 seconds forward
 * SHIFT + LEFT ARROW : 3 seconds backward
@@ -59,7 +61,7 @@
 * CTRL + RIGHT ARROW : 1 minute forward
 * CTRL + LEFT ARROW : 1 minute backward
 
-# Display Options
+### Display Options
 
 * A: Cycle aspect ratio
 * C : Cycle through crop display area
@@ -68,7 +70,7 @@
 * O : Switch to original size of the video
 * W : Wallpaper mode on (with DirectX output)
 
-# Sound and Audio Operations
+### Sound and Audio Operations
 
 * CTRL + UP ARROW or Mouse Scroll Up : Volume Up
 * CTRL + DOWN ARROW or Mouse Scroll Down : Volume Down
@@ -78,18 +80,18 @@
 * M : Mute sound on and off
 * Shift + A : Cycle through audio devices
 
-# Media Information
+### Media Information
 
 * CTRL + I : View and edit media information like title, artist, album
 * CTRL + J : View codec information like your media dimensions, audio and video codecs
 
-# Playlist Operations
+### Playlist Operations
 
 * CTRL + L : Switch to playlist or back to media
 * CTRL + Y : Save current playlist to a file
 * CTRL + B : Create, delete and clear bookmarks menu.
 
-# Disc Operations
+### Disc Operations
 
 * Shift + B : Next title
 * Shift + O : Previous title
@@ -99,7 +101,7 @@
 * Shift + H : History forward
 * Shift + G : History back
 
-# Miscellaneous
+### Miscellaneous
 
 * Shift + R : Start and stop recording
 * Shift + S : Take snapshot
@@ -112,7 +114,7 @@
 * ALT + R : Crop from top
 * ALT + SHIFT + R : Uncrop from top
 
-# File Menu Operations
+### File Menu Operations
 
 * ALT + M : Open media menu
 * ALT + L : Open playback menu

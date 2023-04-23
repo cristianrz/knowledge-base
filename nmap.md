@@ -1,16 +1,16 @@
-% nmap
+# nmap
 
-# Ping sweep
+## Ping sweep
 
 ```sh
 nmap -sn
 ```
 
-# Scripts
+## Scripts
 
 Scripts are in `/usr/share/nmap/scripts` and can be used with `nmap --script xxx`.
 
-# Scanning
+## Scanning
 
 ```bash
 nmap -T4 -p- -A <ip>

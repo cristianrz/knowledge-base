@@ -1,4 +1,4 @@
-% Privacy links
+# Privacy links
 
 - [Send](https://send.vis.ee/): file sharing
 - [Hat.sh](https://hat.sh/): file encryption

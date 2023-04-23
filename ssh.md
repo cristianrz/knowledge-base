@@ -1,6 +1,6 @@
-% SSH
+# OpenSSH
 
-# Local port forwarding
+## Local port forwarding
 
 * Access something they can access but I can't access
 * Bypass port block
@@ -25,7 +25,7 @@ To run in background `-N -f`
 
 Check that `AllowTcpForwarding` is set to `yes` on remote SSH server
 
-# Dynamic port forwarding
+## Dynamic port forwarding
 
 Used as a web proxy (socks).
 
@@ -35,7 +35,7 @@ From gate:
 ssh -D [gate port] [user]@[target ip]
 ```
 
-# Remote port forwarding
+## Remote port forwarding
 
 * Give someone else a port on my machine through SSH
 
@@ -56,7 +56,7 @@ ssh -R 8080:dest.lan:3000 -N -f gateway.lan
 
 Make sure `GatewayPorts` is set to `yes` in the remote SSH server.
 
-# SFTP chroot
+## SFTP chroot
 
 ```sshd_config
 Match User user
@@ -65,7 +65,7 @@ Match User user
 	AuthorizedKeysFile "E:\.ssh\authorized_keys"
 ```
 
-# Use existing agent
+## Use existing agent
 
 ```bash
 # find ssh sockets

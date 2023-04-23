@@ -1,4 +1,4 @@
-% Nextcloud
+# Nextcloud
 
 ## Nextcloud in a chroot
 

@@ -1,4 +1,4 @@
-% BTRFS
+# BTRFS
 
 ## Most common commands
 
