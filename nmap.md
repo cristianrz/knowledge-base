@@ -3,7 +3,7 @@
 ## Ping sweep
 
 ```sh
-nmap -sn
+nmap -sn 192.168.1.0/24 2>&1 | grep -B 1 up | grep report
 ```
 
 ## Scripts
