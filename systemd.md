@@ -230,3 +230,11 @@ journalctl --follow --directory=/var/log/journal/remote _HOSTNAME=raspberry-pi-3
 
 https://web.archive.org/web/20221028110703/https://harryhodge.co.uk/posts/2021/07/centralised-logging-with-systemd-and-journald/
 
+## Run job in the background
+
+```bash
+systemd-run \
+	--remain-after-exit \
+	-u "$unit_name" \
+	bash -c "$command$"
+```

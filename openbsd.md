@@ -104,3 +104,14 @@ FS type: [swap]        # just click Enter key
 > p                    # check partitions in the end
 > q                    # save changes and exit
 ```
+
+## Command equivalents
+
+| Linux | OpenBSD |
+| --- | --- |
+| `apt upgrade` | `pkg_add -u` |
+| `ip a` | `ifconfig` |
+| `ip route` | `route -n show -inet` |
+
+
+

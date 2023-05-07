@@ -1,15 +1,15 @@
 # OpenSSL
 
-## Make a certificate self signed
+## Make a certificate self signed for an IP
 
 ```bash
 #!/bin/sh      
 
 set -eux
   
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+openssl req -x509 -nodes -days 182 -newkey rsa:2048 \
 	-keyout privkey.pem -out cert.pem \
-	-addext "subjectAltName = IP:10.11.12.16" \
+	-addext "subjectAltName = IP:192.168.0.1" \
 	-addext "extendedKeyUsage = serverAuth"
 
 openssl pkcs12 -export -out key.pfx -inkey privkey.pem -in cert.pem -passout pass:
