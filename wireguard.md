@@ -24,3 +24,10 @@ PostDown = systemctl start systemd-resolved; ln -rsf /run/systemd/resolve/stub-r
 ```
 
 Also add `systemd-resolved.service` as an `After` and `Wants` for `wg-quick@`.
+
+## Show wireguard routes
+
+```bash
+ip route show table all
+```
+
