@@ -141,3 +141,42 @@ rm ${client}.csr
 ```bash
 openssl x509 -in cert.pem -text
 ```
+
+## Make Firefox trust only your own CA's
+
+- Firefox uses cert9.db inside your profile to decide what certs to trust.
+- By default it only uses the certs embedded in libnss3.so
+- You can mark them as not trusted manually from the certs window in the settings but this can take too long
+- These certificates are also in /usr/share/ca-certificates/mozilla/
+- We can add these certificates to a db
+
+1. Copy the current \*.db files to a directory
+2. Add all to the db as untrusted
+
+```bash
+#!/bin/bash
+
+set -eu
+
+# Set the path to the NSS database
+NSSDB="<the directory>"
+
+# Loop through each .crt file in /usr/share/ca-certificates/mozilla/
+for crt_file in /usr/share/ca-certificates/mozilla/*.crt; do
+        # Extract the filename without the extension
+        filename="$(basename "$crt_file" .crt | sed 's/_/ /g')"
+
+        # Add the certificate to the NSS database
+        if certutil -A -n "$filename" -t "c,," -d "$NSSDB" -i "$crt_file"; then
+                echo "Added $filename.crt to the NSS database."
+        else
+                echo "Failed to add $filename.crt to the NSS database."
+        fi
+done
+```
+
+3. Create a new Firefox profile, but don't launch it!
+4. Copy the \*.db files inside the profile
+5. Launch Firefox now
+6. If you go to any website with HTTPS it will say the certificate is not trusted
+7. Now you can add your own CA's
