@@ -179,4 +179,10 @@ done
 4. Copy the \*.db files inside the profile
 5. Launch Firefox now
 6. If you go to any website with HTTPS it will say the certificate is not trusted
-7. Now you can add your own CA's
+
+Now you can add your own CA's:
+
+1. Check the certificate for the site
+2. Go on the tab associated with the CA
+3. Download the PEM
+4. Add it through the certificates window in settings

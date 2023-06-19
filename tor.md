@@ -1,10 +1,10 @@
-	# Tor
+# Tor
 
 ## SSH
 
 1. Add to `torrc`:
 
-```ini
+```conf
 SocksPort                     0
 HiddenServiceDir              /var/lib/tor/site
 HiddenServiceVersion          3
@@ -32,15 +32,14 @@ descriptor:x25519:<public key>
 EOF
 ```
 
-4. Restart `tor`
+3. Restart `tor`
 
 ```bash
 sudo systemctl reload tor
 ```
 
-5. Get address from `/var/lib/tor/site/hostname` 
-
-6. On client side, add to `torrc`
+4. Get address from `/var/lib/tor/site/hostname` 
+5. On client side, add to `torrc`
 
 ```
 # torrc
@@ -55,14 +54,14 @@ cat << EOF > /var/lib/tor/onion_auth/bob_onion.auth_private
 EOF
 ```
 
-7. Restart `tor`
+6. Restart `tor`
 
 ```bash
 sudo systemctl reload tor
 ```
 
-8. Use `ssh` over `tor`
+7. Use `ssh` over `tor`
 
 ```bash
-	torsocks ssh host
+torsocks ssh host
 ```
