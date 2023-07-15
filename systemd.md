@@ -238,3 +238,9 @@ systemd-run \
 	-u "$unit_name" \
 	bash -c "$command$"
 ```
+
+## List running services
+
+```bash
+systemctl --type=service --state=running
+```

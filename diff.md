@@ -11,3 +11,8 @@ patch file1.html patchfile.patch
 patch -p0 -R -i patchfile.patch
 ```
 
+## Diff two directories
+
+```bash
+diff --color=always -burN dir1/ dir2/
+```

@@ -44,19 +44,24 @@ restic -r /srv/restic-repo restore latest --target /tmp/restore-art --path "/hom
 
 # Mount 
 restic -r /srv/restic-repo mount /mnt/restic
+```
 
-#  Remove a snapshot
+## Remove a snapshot
+
+```bash
 restic -r /srv/restic-repo forget bdbd3439
 restic -r /srv/restic-repo prune
+```
 
-# Remove according to policy dry running first
+## Remove according to policy dry-running first
+
+```bash
 restic forget \
-	--dry-run         \
-	--group-by ''     \
-	--keep-hourly  1  \
-	--keep-daily   3  \
-	--keep-weekly  3  \
-	--keep-monthly 3  \
-	--keep-yearly 10  \
-	
+	--group-by ''     \
+	--keep-hourly  24 \
+	--keep-daily   7  \
+	--keep-weekly  4  \
+	--keep-monthly 12 \
+	--keep-yearly  10 \
+	--dry-run
 ```
