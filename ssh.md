@@ -84,3 +84,10 @@ fi
 unset ssh_sock
 ```
 
+## Kill frozen session
+
+Press:
+- Enter
+- ~ (tilde)
+- . (period)
+
