@@ -1,3 +1,5 @@
+# Linux Administration Handbook notes
+
 ## man
 
 - `manpath` shows equivalent of `PATH` for man pages
