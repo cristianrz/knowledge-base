@@ -99,3 +99,25 @@ sort -u "$HOME/.ssh/authorized_keys" > "$HOME/.ssh/authorized_keys.bak"
 mv "$HOME/.ssh/authorized_keys.bak" "$HOME/.ssh/authorized_keys"
 chmod 0700 "$HOME/.ssh/authorized_keys"
 ```
+
+## Encrypt/decrypt with SSH keys
+
+- Convert the public key into `pem` format
+
+```bash
+ssh-keygen -f path/to/id_rsa.pub -e -m pem > ~/id_rsa.pub.pem
+```
+
+- Using the public `pem` file to encrypt a string
+
+```bash
+cat ~/some_file.txt |
+	openssl rsautl -encrypt -pubin -inkey ~/id_rsa.pub.pem > ~/encrypted.txt
+```
+
+- To decrypt, you'll need the private key
+
+```bash
+cat ~/encrypted.txt |
+	openssl rsautl -decrypt -inkey path/to/id_rsa > ~/decrypted.txt
+```
