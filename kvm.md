@@ -85,3 +85,52 @@ if [ "${1}" = "VM NAME" ]; then
    fi
 fi
 ```
+
+## Resize not working
+
+Things to try:
+
+- `apt install spice-vdagent`
+- Agent has 2 parts: `spice-vdagentd` running as root and `spice-vdagent`. The root service is started by `spice-vdagent.socket` but on Debian it does not activate it for some reason. Starting the user process seems to trigger the socket to active the service:
+
+```bash
+/usr/bin/spice-vdagent
+```
+
+- Non-KDE/GNOME desktops may not resize automatically, for those: `xrandr --output Virtual-0 --auto`. Also a daemon that checks automatically can be used:
+
+```bash
+#!/bin/sh
+
+set -eu
+
+sleep_time=2
+
+while true; do
+	cmd="$(
+		xrandr | awk '
+			NR == 1 {
+				gsub(/,/, "", $10)
+				res_a = sprintf("%ix%i", $8, $10)
+			}
+
+            NR == 2 { display = $1 }
+			
+			NR == 3 { res_b = $1 }
+			
+			END {
+				if (res_a != res_b) {
+					printf("xrandr --output %s --auto\n", display)
+				}
+			}
+	    '
+	)"
+
+	if [ -n "$cmd" ]; then
+		eval "$cmd"
+	fi
+
+	sleep "$sleep_time"
+done
+
+```

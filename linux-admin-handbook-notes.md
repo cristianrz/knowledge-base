@@ -62,4 +62,35 @@ through `tr "\000" "\n"`
 ## chmod
 
 - Copy permissions: `chmod --reference=fileA fileB`
-- 
+
+## hdparm
+
+Spin down HDD when not in use:
+
+```bash
+hdparm -S 5 /dev/sdX
+```
+
+## mdadm
+
+Generate config file:
+
+```bash
+echo DEVICE /dev/sdb1 /dev/sdc1 /dev/sdd1 > /etc/mdadm.conf
+mdadm --detail --scan >> /etc/mdadm.conf
+```
+
+Enable array:
+
+```bash
+mdadm -As /dev/md0
+```
+
+## Debian install
+
+Generate preseed file:
+
+```bash
+debconf-get-selections --installer > preseed.cfg
+debconf-get-selections >> preseed.cfg
+```

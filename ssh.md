@@ -91,9 +91,11 @@ Press:
 - ~ (tilde)
 - . (period)
 
-## Install pubkeys from github
+## Install pubkeys from GitHub
 
 ```bash
+mkdir -p "$HOME/.ssh"
+chmod 0700 "$HOME/.ssh"
 curl https://github.com/cristianrz.keys >> "$HOME/.ssh/authorized_keys"
 sort -u "$HOME/.ssh/authorized_keys" > "$HOME/.ssh/authorized_keys.bak"
 mv "$HOME/.ssh/authorized_keys.bak" "$HOME/.ssh/authorized_keys"
