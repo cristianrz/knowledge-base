@@ -107,30 +107,30 @@ set -eu
 sleep_time=2
 
 while true; do
-	cmd="$(
-		xrandr | awk '
-			NR == 1 {
-				gsub(/,/, "", $10)
-				res_a = sprintf("%ix%i", $8, $10)
-			}
+  cmd="$(
+    xrandr | awk '
+      NR == 1 {
+        gsub(/,/, "", $10)
+        res_a = sprintf("%ix%i", $8, $10)
+      }
 
             NR == 2 { display = $1 }
-			
-			NR == 3 { res_b = $1 }
-			
-			END {
-				if (res_a != res_b) {
-					printf("xrandr --output %s --auto\n", display)
-				}
-			}
-	    '
-	)"
+      
+      NR == 3 { res_b = $1 }
+      
+      END {
+        if (res_a != res_b) {
+          printf("xrandr --output %s --auto\n", display)
+        }
+      }
+      '
+  )"
 
-	if [ -n "$cmd" ]; then
-		eval "$cmd"
-	fi
+  if [ -n "$cmd" ]; then
+    eval "$cmd"
+  fi
 
-	sleep "$sleep_time"
+  sleep "$sleep_time"
 done
 
 ```
