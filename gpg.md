@@ -50,3 +50,9 @@ gpg --output doc.gpg --symmetric doc
 ```shell
 gpg --output doc --decrypt doc.gpg
 ```
+
+## Password from password file
+
+```bash
+gpg --passphrase-fd 0 --pinentry-mode loopback $ARGS < "$PASS_FILE"
+```
